@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Products</h1>
+<h1 class="p-3">Welcome to PyShop</h1>
 <div class="row">
     {% for product in products %}
-        <div class="col">
-            <div class="card" style="width: 18rem; height:350px:">
-                <img src={{ product.image_url }} class="card-img-top" alt="...">
+        <div class="col mb-5">
+            <div class="card" style="width: 18rem;">
+                <img style="height:300px;" src={{ product.image_url }} class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
-                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text">${{ product.price }} <br> stock: {{ product.stock }}</p>
                     <a href="#" class="btn btn-primary">Add to Cart</a>
                 </div>
             </div>
